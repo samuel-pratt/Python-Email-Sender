@@ -1,3 +1,12 @@
+# Made by Samuel Pratt and Colin Day
+# https://github.com/samuel-pratt
+# https://github.com/colinday99
+
+# Thanks to:
+# Baki Er - https://medium.com/@bakiiii/automatic-e-mail-sending-with-python-eb41855119e1
+# Josaka de Langen - https://realpython.com/python-send-email/
+# For the help their publications provided
+
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -18,7 +27,7 @@ class sender:
         html_open = open("Message.html")
         html = html_open.read()
         msg.attach(MIMEText(html, 'html'))
-
+        
         # Opens a connection to the stmp gmail server
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
@@ -26,6 +35,6 @@ class sender:
         # Prompts the user for the password, logging into the email account
         password = input("Password ")
         server.login(email_from, password)
-
+        
         # Sends email
         server.sendmail(email_from, email_to, msg.as_string())
