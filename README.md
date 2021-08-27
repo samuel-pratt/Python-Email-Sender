@@ -2,4 +2,4 @@
 
 A basic script to send emails with HTML and CSS content using python.
 
-main.py shows a basic example using sender.py.
+`main.py` shows an example using `sender.py`.
